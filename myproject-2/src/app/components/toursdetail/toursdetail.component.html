@@ -1,0 +1,78 @@
+<div class="bradcam_area bradcam_bg_3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Chi tiết sản phẩm </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <div class="section-top-border">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="http://localhost:3000/img/{{product.image}}" alt="" width="100%">
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Tên chuyến đi : {{product.name}}</h2>
+                            <p><i><s>Giá gốc : {{product.price}}</s></i></p>
+                            <p><i>Giá khuyến mại :  {{product.sale_price}}</i></p>
+                        </div>
+                        <div class="col-md-12">
+                            <a class="mx-2"><i class="fa fa-heart text-danger" ></i></a>
+                            <a class="mx-2"><i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                        <div class="col-md-12 my-2">
+                           <h3>Ngày Khởi hành : {{product.created_at}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center my-5">
+                    <div class="section_title text-center mb_70">
+                        <h3>Thông tin chuyến đi</h3>
+                    </div>
+                    <div class="product-desc" [innerHTML]="product.description" >
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="recent_trip_area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section_title text-center mb_70">
+                            <h3>Các sản phẩm liên quan</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6" *ngFor="let tn of related_products | paginate: { itemsPerPage: 3, currentPage: p }">
+                        <div class="single_trip">
+                            <div class="thumb">
+                                <img [src]="'http://localhost:3000/img/' +  tn.image" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="date">
+                                    <span>{{tn.name}}</span>
+                                </div>
+                                <a href="#">
+                                    <h3>Giá : {{tn.price | currency: "":"":"6.0"}}</h3>
+                                </a>
+                                <a><i class="fa fa-heart text-danger" ></i></a>
+                                <a class="mx-2"><i class="fa fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,194 @@
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a routerLink="/">
+                                    <img src="assets/img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" routerLink="/">Home</a></li>
+                                        <li><a class="active" routerLink="#">About</a></li>
+                                        <li><a class="active" routerLink="#">Blog</a></li>
+                                        <li><a class="active" routerLink="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                            <div class="social_wrap d-flex align-items-center justify-content-end">
+                                <div class="social_links d-none d-xl-block">
+                                    <ul class="submenu" *ngIf="!account">
+                                        <li><a routerLink="/login"><i class="fa fa-heart"></i></a></li>
+                                        <li><a class="" routerLink="/login"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a routerLink="/login"><i class="fa fa-user"></i></a>/<a routerLink="/register"><i class="fa fa-registered"></i></a></li>
+                                    </ul>
+                                    <ul class="submenu" *ngIf="account">
+                                        <li><a routerLink="/favourite"><i class="fa fa-heart"></i></a></li>
+                                        <li><a class="" routerLink="/cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a routerLink="#"><i class="fa fa-user"> {{account.name}}</i></a>/<a routerLink="#" (click)="on_logout()"><i class="fa fa-arrow-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seach_icon">
+                            <a data-toggle="modal" data-target="#exampleModalCenter" routerLink="#">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<router-outlet></router-outlet>
+<footer class="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-lg-4 ">
+                    <div class="footer_widget">
+                        <div class="footer_logo">
+                            <a routerLink="#">
+                                <img src="assets/img/footer_logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
+                            <a routerLink="#">+10 367 826 2567</a> <br>
+                            <a routerLink="#">contact@carpenter.com</a>
+                        </p>
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a routerLink="#">
+                                        <i class="ti-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a routerLink="#">
+                                        <i class="ti-twitter-alt"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a routerLink="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a routerLink="#">
+                                        <i class="fa fa-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a routerLink="#">
+                                        <i class="fa fa-youtube-play"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Company
+                        </h3>
+                        <ul class="links">
+                            <li><a routerLink="#">Pricing</a></li>
+                            <li><a routerLink="#">About</a></li>
+                            <li><a routerLink="#"> Gallery</a></li>
+                            <li><a routerLink="#"> Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Popular destination
+                        </h3>
+                        <ul class="links double_links">
+                            <li><a routerLink="#">Indonesia</a></li>
+                            <li><a routerLink="#">America</a></li>
+                            <li><a routerLink="#">India</a></li>
+                            <li><a routerLink="#">Switzerland</a></li>
+                            <li><a routerLink="#">Italy</a></li>
+                            <li><a routerLink="#">Canada</a></li>
+                            <li><a routerLink="#">Franch</a></li>
+                            <li><a routerLink="#">England</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Instagram
+                        </h3>
+                        <div class="instagram_feed">
+                            <div class="single_insta">
+                                <a routerLink="#">
+                                    <img src="assets/img/instagram/1.png" alt="">
+                                </a>
+                            </div>
+                            <div class="single_insta">
+                                <a routerLink="#">
+                                    <img src="assets/img/instagram/2.png" alt="">
+                                </a>
+                            </div>
+                            <div class="single_insta">
+                                <a routerLink="#">
+                                    <img src="assets/img/instagram/3.png" alt="">
+                                </a>
+                            </div>
+                            <div class="single_insta">
+                                <a routerLink="#">
+                                    <img src="assets/img/instagram/4.png" alt="">
+                                </a>
+                            </div>
+                            <div class="single_insta">
+                                <a routerLink="#">
+                                    <img src="assets/img/instagram/5.png" alt="">
+                                </a>
+                            </div>
+                            <div class="single_insta">
+                                <a routerLink="#">
+                                    <img src="assets/img/instagram/6.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a routerLink="#"
+                            target="_blank">Colorlib</a>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

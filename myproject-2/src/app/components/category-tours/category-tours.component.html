@@ -1,0 +1,88 @@
+<div class="bradcam_area bradcam_bg_3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Danh sách sản phẩm theo danh mục</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+
+
+
+
+<section class="blog_area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="recent_trip_area">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="section_title text-center mb_70">
+                                    <h3>Danh mục {{h.name}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="showtoursbycategory.length">
+                            <div class="col-lg-4 col-md-6" *ngFor="let stbc of showtoursbycategory">
+                                <div class="single_trip">
+                                    <div class="thumb">
+                                        <img [src]="'http://localhost:3000/img/' +  stbc.image" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <div class="date">
+                                            <span>{{stbc.price}}</span>
+                                        </div>
+                                        <a href="#">
+                                            <h3>{{stbc.name}}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="!showtoursbycategory.length">
+                            <div class="alert alert-success" role="alert">
+                              <h4 class="alert-heading">Danh mục {{h.name}} không có sản phẩm nào </h4>
+                              <p></p>
+                              <p class="mb-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">Danh mục</h4>
+                        <ul class="list cat-list">
+                            <li *ngFor="let c of showcategory">
+                                <a  routerLink="/about/{{c.id}}" class="d-flex">
+                                    <p>{{c.name}}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+
+                    <!-- <aside class="single_sidebar_widget popular_post_widget">
+                        <h3 class="widget_title">Danh sách tours theo danh mục</h3>
+                        <div class="media post_item" *ngFor="let tbc of showtoursbycategory">
+                            <img [src]="'http://localhost:3000/img/' +  tbc.image" alt="">
+                            <div class="media-body">
+                                <a href="single-blog.html">
+                                    <h3>{{tbc.name}}</h3>
+                                </a>
+                                <p>{{tbc.price}}</p>
+                            </div>
+                        </div>
+                    </aside> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
